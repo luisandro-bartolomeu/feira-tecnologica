@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feira Tecnológica - Academia BAI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header Image - Agora totalmente encaixada -->
+    <div class="header-html">
+        <h1>JORNADA TECNOLÓGICA</h1>
+        <div class="header-dates">
+            <span>19 a 20</span>
+            <span>Março</span>
+            <span>10:00 ÀS 17:00</span>
+        </div>
+        <div class="header-location">
+            ACADEMIA BAI
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Título do Evento (removido pois já está na imagem) -->
+
+        <!-- Filtros -->
+        <div class="filters-container">
+            <!-- Filtro por Status -->
+            <div class="filter-group">
+                <h3>Filtrar por Estado:</h3>
+                <div class="status-filters">
+                    <button class="status-btn active" onclick="filterEvents('status', 'todos')">📋 Todos</button>
+                    <button class="status-btn" onclick="filterEvents('status', 'acontecendo')">🟢 A Decorrer</button>
+                    <button class="status-btn" onclick="filterEvents('status', 'nao-iniciado')">🟡 Não Iniciado</button>
+                    <button class="status-btn" onclick="filterEvents('status', 'terminado')">🔴 Terminado</button>
+                </div>
+            </div>
+
+            <!-- Filtro por Dia -->
+            <div class="filter-group">
+                <h3>Filtrar por Dia:</h3>
+                <div class="day-filters">
+                    <button class="day-btn active" onclick="filterEvents('day', 'todos')">📅 Todos</button>
+                    <button class="day-btn" onclick="filterEvents('day', '19')">Dia 19 (Qui)</button>
+                    <button class="day-btn" onclick="filterEvents('day', '20')">Dia 20 (Sex)</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid de Eventos -->
+        <div id="eventsGrid" class="events-grid"></div>
+    </div>
+
+    <!-- Footer ISAF -->
+    <footer class="footer-section">
+        <img src="logo.png" alt="ISAF - Instituto Superior" class="footer-image">
+
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>O ISAF</h3>
+                <ul>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Mensagem da Presidente</a></li>
+                    <li><a href="#">Corpo Diretivo</a></li>
+                    <li><a href="#">PDI</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>ENSINO</h3>
+                <ul>
+                    <li><a href="#">Admissões</a></li>
+                    <li><a href="#">Corpo Docente</a></li>
+                    <li><a href="#">Licenciaturas</a></li>
+                    <li><a href="#">Bolsas de Estudo</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>VIDA ACADÉMICA</h3>
+                <ul>
+                    <li><a href="#">Actividades Extra Curriculares</a></li>
+                    <li><a href="#">Eventos Académicos</a></li>
+                    <li><a href="#">Associação de Estudantes</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>CONTACTOS</h3>
+                <div class="contact-info">
+                    <p>📍 Av. Pedro de Castro Van-Dúnem Loy, Edifício - Academia BAI, Morro Bento, Luanda-Angola</p>
+                    <p>📞 (+244) 932-599-296</p>
+                    <p>✉️ secretaria@isaf.co.ao</p>
+                </div>
+                <a href="#" class="privacy-link">Política de Privacidade</a>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>© 2026 ISAF - Instituto Superior. Todos os direitos reservados.</p>
+            <p style="font-size: 0.8em; margin-top: 10px;">"O ponto de partida para o teu futuro."</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

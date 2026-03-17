@@ -37,7 +37,7 @@ const atividades = [
         horaFim: "17:00",
         status: "acontecendo"
     },
-    
+
     // Dia 20
     {
         id: 5,
@@ -74,6 +74,15 @@ const atividades = [
         horaInicio: "14:00",
         horaFim: "16:00",
         status: "nao-iniciado"
+    },
+    {
+        id: 9,
+        titulo: "Atividade 9",
+        local: "Sala de Reunião 2",
+        dia: 20,
+        horaInicio: "14:00",
+        horaFim: "16:00",
+        status: "terminado"
     }
 ];
 
@@ -101,7 +110,7 @@ function filterEvents(type, value) {
         });
         event.target.classList.add('active');
     }
-    
+
     // Aplicar filtros
     aplicarFiltros();
 }
@@ -109,24 +118,24 @@ function filterEvents(type, value) {
 // Função para aplicar todos os filtros
 function aplicarFiltros() {
     let atividadesFiltradas = [...atividades];
-    
+
     // Filtrar por status
     if (currentFilter.status !== 'todos') {
         atividadesFiltradas = atividadesFiltradas.filter(a => a.status === currentFilter.status);
     }
-    
+
     // Filtrar por dia
     if (currentFilter.day !== 'todos') {
         atividadesFiltradas = atividadesFiltradas.filter(a => a.dia === parseInt(currentFilter.day));
     }
-    
+
     renderizarAtividades(atividadesFiltradas);
 }
 
 // Função para renderizar atividades
 function renderizarAtividades(atividadesFiltradas) {
     const grid = document.getElementById('eventsGrid');
-    
+
     if (atividadesFiltradas.length === 0) {
         grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px; background: white; border-radius: 10px;">Nenhuma atividade encontrada.</div>';
         return;
@@ -135,7 +144,7 @@ function renderizarAtividades(atividadesFiltradas) {
     grid.innerHTML = atividadesFiltradas.map(atividade => {
         // Determinar classe e texto do status
         let statusClass, statusText;
-        switch(atividade.status) {
+        switch (atividade.status) {
             case 'acontecendo':
                 statusClass = 'status-acontecendo';
                 statusText = '🟢 A Decorrer';
